@@ -29,9 +29,9 @@ class ApplicationController < Sinatra::Base
   end
 
   delete "/plants/:id" do
-    plant = Plant.find(params[:id])
-    plant.destroy
-    plant.to_json
+    plant_to_delete = Plant.find(params[:id])
+    plant_to_delete.destroy
+    plant_to_delete.to_json
   end
 
   get "/buyers" do
