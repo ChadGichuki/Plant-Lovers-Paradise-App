@@ -8,6 +8,9 @@ Plant.create(name: "Ghost Plant", species: "Monotropa uniflora", best_climate: "
 Plant.create(name: "Peace Lily", species: "Spathiphyllum", best_climate: "Cool and humid", water_frequency: "Once a week", no_in_stock: 20, image: "https://commons.wikimedia.org/wiki/File:Spathiphyllum_cochlearispathum_RTBG.jpg#/media/File:Spathiphyllum_cochlearispathum_RTBG.jpg")
 Plant.create(name: "Cactus", species: "Astrophytum asterias", best_climate: "hot and dry", water_frequency: "Once a month", no_in_stock: 7, image: "https://commons.wikimedia.org/wiki/File:Astrophytum_asterias1.jpg#/media/File:Astrophytum_asterias1.jpg")
 
+# Add the plant ids to an array
+$plant_ids = Plant.all.map { |plant| plant[:id] } 
+
 # Use Faker to seed 5 Buyers
 5.times do 
     buyer = Buyer.create(
@@ -19,7 +22,7 @@ Plant.create(name: "Cactus", species: "Astrophytum asterias", best_climate: "hot
     # Create between 1 and 3 purchases for each buyer for a random plant
     rand(1..3).times do 
         Purchase.create(
-            plant_id: rand(1..5),
+            plant_id: $plant_ids.sample,
             buyer_id: buyer.id,
             cost: rand(500..3000)
         )
