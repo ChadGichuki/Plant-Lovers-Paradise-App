@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
 
   patch "/buyers/:id" do
     buyer = Buyer.find(params[:id])
-
+    buyer.update(feedback: params[:feedback])
     buyer.to_json(include: {purchases: {include: :plant}})
   end
 
