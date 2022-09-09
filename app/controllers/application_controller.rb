@@ -2,7 +2,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   get "/plants" do
-    plants = Plant.all
+    plants = Plant.all.order(:name)
     plants.to_json
   end
 
