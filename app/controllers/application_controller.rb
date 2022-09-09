@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   get "/plants" do
     plants = Plant.all.order(:name)
-    plants.to_json
+    plants.to_json(include: {purchases: {include: :buyer}})
   end
 
   get "/plants/:id" do
@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
 
   get "/buyers" do
     buyers = Buyer.all
-    buyers.to_json
+    buyers.to_json(include: {purchases: {include: :plant}})
   end
 
   post "/buyers" do
