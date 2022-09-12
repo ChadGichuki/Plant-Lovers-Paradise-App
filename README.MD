@@ -20,10 +20,13 @@ The following should already be be installed: Ruby, Bundle
   
  ## The API Reference
  ### Getting started
- The server runs on port 9292, hence the base URL for the api is:
+ When running locally, the server runs on port 9292, hence the base URL for the api is:
  
  `http://127.0.0.1:5000/`
  No Authorization or API Key required.
+
+ The base URL for the deployed app is:
+ `https://serene-garden-41047.herokuapp.com/`
  
  ### Data Format
  All the data is returned as JSON objects.
@@ -276,7 +279,7 @@ The following should already be be installed: Ruby, Bundle
  ```
  
  ## Deployment
- The app is deployed on heroku.
+ The app is deployed on heroku at `https://serene-garden-41047.herokuapp.com/`.
  Follow the steps on [this blog](https://medium.com/@isphinxs/deploying-a-sinatra-app-to-heroku-7944b024f77c) to deploy the app to heroku.
  
  ## Authors
