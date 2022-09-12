@@ -60,7 +60,4 @@ class ApplicationController < Sinatra::Base
       plant.to_json(include: {purchases: {include: :buyer}})
     end
 
-    get "plants/top_buyer" do
-    end
-
 end
