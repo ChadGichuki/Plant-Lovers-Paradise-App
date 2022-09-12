@@ -12,24 +12,41 @@ Plant.create(name: "Cactus", species: "Astrophytum asterias", best_climate: "hot
 $plant_ids = Plant.all.map { |plant| plant[:id] } 
 
 # Use Faker to seed 5 Buyers
-5.times do 
-    buyer = Buyer.create(
-        name: Faker::Name.name,
-        contact: Faker::Number.number,
-        feedback: Faker::Lorem.sentence
-    )
+# Faker doesn't work on heroku. Uncomment the code below to seed development db
 
-    # Create between 1 and 3 purchases for each buyer for a random plant
-    rand(1..3).times do 
-        Purchase.create(
-            plant_id: $plant_ids.sample,
-            buyer_id: buyer.id,
-            cost: rand(500..3000)
-        )
-    end 
-end
+# 5.times do 
+#     buyer = Buyer.create(
+#         name: Faker::Name.name,
+#         contact: Faker::Number.number,
+#         feedback: Faker::Lorem.sentence
+#     )
+
+#     # Create between 1 and 3 purchases for each buyer for a random plant
+#     rand(1..3).times do 
+#         Purchase.create(
+#             plant_id: $plant_ids.sample,
+#             buyer_id: buyer.id,
+#             cost: rand(500..3000)
+#         )
+#     end 
+# end
+
+Buyer.create(name: "St. Augustine", contact: 0788998858, feedback: "Healthy plants as always.")
+Buyer.create(name: "Jane Wairimu", contact: 0737894536, feedback: "Love the customer service!")
+Buyer.create(name: "Christiano Ronaldo", contact: 0722000000, feedback: "Highly recommend.")
+Buyer.create(name: "Peter Pan", contact: 0111111111, feedback: "The Monstera took a while to adapt.")
+Buyer.create(name: "Muthoki Gichuki", contact: 0769100100, feedback: "Aaah! I just love the plants! Love!")
+
+# Add the buyer ids to an array
+$buyer_ids = Buyer.all.map { |buyer| buyer[:id] } 
 
 
+Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
+Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
+Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
+Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
+Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
+Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
 
 
 puts "✅ Done seeding!"
