@@ -38,6 +38,9 @@ gem "require_all", "~> 3.0"
 # Heroku requires postgress gem in place of sqlite3
 gem "pg"
 
+# Needed for ruby versions older than 3.1
+gem 'psych', '< 4'
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
