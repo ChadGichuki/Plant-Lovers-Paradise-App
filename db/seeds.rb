@@ -31,11 +31,11 @@ $plant_ids = Plant.all.map { |plant| plant[:id] }
 #     end 
 # end
 
-Buyer.create(name: "St. Augustine", contact: 0788998858, feedback: "Healthy plants as always.")
-Buyer.create(name: "Jane Wairimu", contact: 0737894536, feedback: "Love the customer service!")
-Buyer.create(name: "Christiano Ronaldo", contact: 0722000000, feedback: "Highly recommend.")
-Buyer.create(name: "Peter Pan", contact: 0111111111, feedback: "The Monstera took a while to adapt.")
-Buyer.create(name: "Muthoki Gichuki", contact: 0769100100, feedback: "Aaah! I just love the plants! Love!")
+Buyer.create(name: "St. Augustine", contact: 788998858, feedback: "Healthy plants as always.")
+Buyer.create(name: "Jane Wairimu", contact: 737894536, feedback: "Love the customer service!")
+Buyer.create(name: "Christiano Ronaldo", contact: 722000000, feedback: "Highly recommend.")
+Buyer.create(name: "Peter Pan", contact: 111111111, feedback: "The Monstera took a while to adapt.")
+Buyer.create(name: "Muthoki Gichuki", contact: 769100100, feedback: "Aaah! I just love the plants! Love!")
 
 # Add the buyer ids to an array
 $buyer_ids = Buyer.all.map { |buyer| buyer[:id] } 
