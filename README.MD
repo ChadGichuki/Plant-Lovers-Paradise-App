@@ -282,7 +282,7 @@ The following should already be be installed: Ruby, Bundle
  ## Authors
   Richard Gichuki. [Find me here](https://github.com/ChadGichuki)
   
-  Flatiron Curriculum team (starter code)
+  Flatiron Curriculum team (starter code). 
   
  ## Acknowledgements
   My Moringa School TMs: Grace Umutesi, Anita Kahenya & Silas Silikhe.
