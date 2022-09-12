@@ -38,7 +38,7 @@ Buyer.create(name: "Peter Pan", contact: 111111111, feedback: "The Monstera took
 Buyer.create(name: "Muthoki Gichuki", contact: 769100100, feedback: "Aaah! I just love the plants! Love!")
 
 # Add the buyer ids to an array
-$buyer_ids = Buyer.all.map { |buyer| buyer[:id] } 
+$buyers_ids = Buyer.all.map { |buyer| buyer[:id] } 
 
 
 Purchase.create(plant_id: $plant_ids.sample, buyer_id: $buyers_ids.sample, cost: rand(500..3000))
